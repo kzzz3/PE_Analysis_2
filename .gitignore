@@ -1,0 +1,41 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE/editor
+.idea/
+.vscode/
+*.code-workspace
+
+# Nested local git metadata (if accidentally initialized here)
+.git/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Generated figures/plots from analysis scripts
+*_aligned.png
+*_plot.png
+bpp_psnr_plot.png
+psnr_ssim_plot.png
+canny_edges.jpg
+sobel_edges.jpg
+*_plain.pdf
+*_cipher.pdf
+
+# Runtime logs
+*.log
