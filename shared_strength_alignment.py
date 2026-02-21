@@ -34,16 +34,59 @@ def project_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 
-def default_input_root() -> Path:
+def default_gray_input_root() -> Path:
+    gray_root = project_root() / "Result" / "InputImage" / "Gray"
+    if gray_root.exists():
+        return gray_root
     return project_root() / "Result" / "InputImage"
 
 
+def default_color_input_root() -> Path:
+    return project_root() / "Result" / "InputImage" / "Color"
+
+
+def default_input_root() -> Path:
+    return default_gray_input_root()
+
+
+def default_gray_output_root() -> Path:
+    gray_root = project_root() / "Result" / "OutputImage" / "Gray"
+    if gray_root.exists():
+        return gray_root
+    return project_root() / "Result" / "OutputImage"
+
+
 def default_dc_root() -> Path:
-    return project_root() / "Result" / "OutputImage" / "DcEncryption"
+    candidates = [
+        default_gray_output_root() / "DcEncryption",
+        project_root() / "Result" / "OutputImage" / "DcEncryption",
+    ]
+    for path in candidates:
+        if path.exists():
+            return path
+    return candidates[0]
 
 
 def default_ac_root() -> Path:
-    return project_root() / "Result" / "OutputImage" / "AcEncryption"
+    candidates = [
+        default_gray_output_root() / "AcEncryption",
+        project_root() / "Result" / "OutputImage" / "AcEncryption",
+    ]
+    for path in candidates:
+        if path.exists():
+            return path
+    return candidates[0]
+
+
+def default_color_output_root() -> Path:
+    candidates = [
+        project_root() / "Result" / "OutputImage" / "Color",
+        project_root() / "Result" / "OutputImageColor",
+    ]
+    for path in candidates:
+        if path.exists():
+            return path
+    return candidates[0]
 
 
 def build_rho_grid(step: float = 0.05) -> np.ndarray:

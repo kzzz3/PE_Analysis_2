@@ -1,0 +1,28 @@
+{
+  "methods": [
+    {
+      "name": "proposed_pe",
+      "enabled": true,
+      "workdir": "F:/Expriment/JpegPE/PE",
+      "encrypt_cmd": "build/global-x64/Release/PE.exe --mode both --threads {threads} --input \"{input_dir}\" --output \"{output_dir}\" --qf {qf} --ac-st {ac_st} --subsampling {subsampling} --dc-max {dc_max} --iwt-level {iwt_level} --verify-reversible 0",
+      "decrypt_cmd": "",
+      "note": "If this exe path differs on your machine, update workdir/encrypt_cmd accordingly."
+    },
+    {
+      "name": "related_be",
+      "enabled": false,
+      "workdir": "F:/Expriment/JpegPE/RelatedWrok/BE/PE/PE",
+      "encrypt_cmd": "x64/Release/PE.exe",
+      "decrypt_cmd": "",
+      "note": "Enable after confirming BE executable path and adding runtime arguments if needed."
+    },
+    {
+      "name": "related_se",
+      "enabled": false,
+      "workdir": "F:/Expriment/JpegPE/RelatedWrok/SE/PE/PE",
+      "encrypt_cmd": "x64/Release/PE.exe",
+      "decrypt_cmd": "",
+      "note": "Enable after confirming SE executable path and adding runtime arguments if needed."
+    }
+  ]
+}

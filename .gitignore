@@ -39,3 +39,12 @@ sobel_edges.jpg
 
 # Runtime logs
 *.log
+# Generated analysis outputs
+runtime_workspace/
+runtime_raw_runs.csv
+runtime_summary.csv
+endpoint_summary.csv
+all_rho_summary.csv
+n_ablation_*.csv
+consistency_*.csv
+quality_preview_*.png
